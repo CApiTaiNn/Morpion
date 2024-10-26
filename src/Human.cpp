@@ -10,6 +10,11 @@ tab Human::jouer(sf::RenderWindow& window) {
     sf::Event event;
     while (true) {
         while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed){
+                window.close();
+                return coord;
+            }
+            
             if (event.type == sf::Event::MouseButtonPressed and event.mouseButton.button == sf::Mouse::Left) {
                 int x = event.mouseButton.x;
                 int y = event.mouseButton.y;
